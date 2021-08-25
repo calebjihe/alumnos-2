@@ -1,7 +1,6 @@
 package com.example.demo.entity;
 
 import java.io.Serializable;
-import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.Entity;
@@ -12,7 +11,6 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
-import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.persistence.UniqueConstraint;
 
@@ -40,14 +38,12 @@ public class Alumno implements Serializable {
 	private String apm;
 	//private Double calificacion;
 	
-//	@ManyToMany(fetch = FetchType.LAZY)
-//	@JoinTable(name="alumnos_materias",
-//				joinColumns = @JoinColumn(name="alumno_id"),
-//				inverseJoinColumns = @JoinColumn(name="materia_id"),
-//				uniqueConstraints = {@UniqueConstraint(columnNames = {"alumno_id","materia_id"})})
-	
-	@OneToMany(fetch = FetchType.EAGER, mappedBy = "alumno")
-	private List<AlumnoMateria> alumnoMaterias = new ArrayList<>();
+	@ManyToMany(fetch = FetchType.LAZY)
+	@JoinTable(name="alumnos_materias",
+				joinColumns = @JoinColumn(name="alumno_id"),
+				inverseJoinColumns = @JoinColumn(name="materia_id"),
+				uniqueConstraints = {@UniqueConstraint(columnNames = {"alumno_id","materia_id"})})
+	private List<Materia> materias;
 
 	
 

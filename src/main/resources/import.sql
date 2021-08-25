@@ -6,7 +6,7 @@ INSERT INTO materia (nombre)  VALUES('Matematicas');
 INSERT INTO materia (nombre)  VALUES('Quimica');
 
 
-INSERT INTO alumno_materia (id_Alumno,id_Materia,calificacion)  VALUES(1,1,1.2);
-INSERT INTO alumno_materia (id_Alumno,id_Materia,calificacion)  VALUES(1,2,2.1);
-INSERT INTO alumno_materia (id_Alumno,id_Materia,calificacion)  VALUES(2,2,3.1);
-INSERT INTO alumno_materia (id_Alumno,id_Materia,calificacion)  VALUES(2,3,4.1);
+INSERT INTO alumnos_materias (alumno_id,materia_id)  VALUES(1,1);
+INSERT INTO alumnos_materias (alumno_id,materia_id)  VALUES(1,2);
+INSERT INTO alumnos_materias (alumno_id,materia_id)  VALUES(2,2);
+INSERT INTO alumnos_materias (alumno_id,materia_id)  VALUES(2,3);

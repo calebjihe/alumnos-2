@@ -15,7 +15,7 @@ public class AlumnoController {
 	@Autowired
 	private AlumnoService alumnoService;
 	
-	@GetMapping("/alumnosRegistrados")
+	@GetMapping("/listar")
 	public List<Alumno> listar(){
 		return alumnoService.findAll();
 	}
